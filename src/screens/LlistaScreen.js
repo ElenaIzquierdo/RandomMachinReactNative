@@ -57,7 +57,7 @@ export default class Inici extends React.Component {
                 {this.pintarLlista()}
               </View>
               
-              <Button buttonText = {'Decideix!!'} path = {() => Actions.result()}/>
+              <Button buttonText = {'Decideix!!'} path = {() => Actions.result({llista: this.state.llista})}/>
 
             </View>  
         );
@@ -82,7 +82,7 @@ export default class Inici extends React.Component {
     },
     textInputStyle:{
       height: 40,
-      fontSize: 30,
+      fontSize: 20,
       width: 200,
       marginTop: 20,
   },

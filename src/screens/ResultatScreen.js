@@ -8,14 +8,26 @@ import DiceButton from '../components/DiceButton';
 
 
 export default class Inici extends React.Component {
+  constructor(props) {
+    super(props)  
+  }
   onPress = () => {
     Actions.llista();
   }
+  pintarLlista(){
+    const llista_copia = this.props.llista;
+    var s = llista_copia.length
+    var num_random = Math.floor(Math.random() * s);
+    return(
+      <Text style = {styles.textStyle}>{llista_copia[num_random]}</Text>
+      
+    );
+  }
     render() {
-        const {viewStyle, imageStyle, textStyle} = styles;
+        const {viewStyle} = styles;
         return (
             <View style = {viewStyle}>
-              <Text style = {textStyle}>UEEEEE</Text>
+              {this.pintarLlista()}
             </View>   
         );
     }
