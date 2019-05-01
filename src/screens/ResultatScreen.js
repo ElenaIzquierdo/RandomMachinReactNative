@@ -1,10 +1,9 @@
 import React from 'react';
 import {APP_COLORS} from "../constants/colors";
-import { Text, View, TouchableOpacity, Alert, Image } from 'react-native';
+import { Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import Button from "../components/Button";
 
-import Title from "../components/Title";
-import DiceButton from '../components/DiceButton';
 
 
 export default class Inici extends React.Component {
@@ -19,33 +18,43 @@ export default class Inici extends React.Component {
     var s = llista_copia.length
     var num_random = Math.floor(Math.random() * s);
     return(
-      <Text style = {styles.textStyle}>{llista_copia[num_random]}</Text>
+      <Text style = {styles.textStyle2}>{llista_copia[num_random]}</Text>
       
     );
   }
     render() {
-        const {viewStyle} = styles;
+        const {viewStyle,textStyle} = styles;
         return (
             <View style = {viewStyle}>
+              <Text style={textStyle}>I la opció guanyadora és...</Text>
               {this.pintarLlista()}
+              <Button style={styles.buttonstyle} buttonText = {'OK'} path = {() => Actions.llista()}/>
             </View>   
         );
     }
   };
 
   const styles ={
+    buttonstyle: {
+      marginTop:'10%',
+    },
     viewStyle: {
         backgroundColor: APP_COLORS.taronja,
         width: '100%', 
         height: '100%',
         alignContent: 'center',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     textStyle: {
         color:APP_COLORS.groc,
         fontSize: 30,
         fontWeight: 'bold',
+    },
+    textStyle2: {
+      color:APP_COLORS.groc,
+      fontSize: 50,
+      fontWeight: 'bold',
     },
     imageStyle: {
       width: 150,

@@ -6,6 +6,10 @@ import {Router, Scene} from 'react-native-router-flux';
 import StartScreen from './src/screens/StartScreen';
 import LlistaScreen from './src/screens/LlistaScreen';
 import ResultatScreen from './src/screens/ResultatScreen';
+import Count2Screen from './src/screens/Count2Screen';
+import Count1Screen from './src/screens/Count1Screen';
+import Count3Screen from './src/screens/Count3Screen';
+
 
 export default class App extends React.Component {
   render() {
@@ -15,6 +19,9 @@ export default class App extends React.Component {
           <Scene key = "inici" component = {StartScreen}/>
           <Scene key = "llista" component = {LlistaScreen}/>
           <Scene key = "result" component = {ResultatScreen}/>
+          <Scene key = "count3" component = {Count3Screen}/>
+          <Scene key = "count2" component = {Count2Screen}/>
+          <Scene key = "count1" component = {Count1Screen}/>
         </Scene>
       </Router>
     );

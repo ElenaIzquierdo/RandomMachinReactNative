@@ -57,7 +57,7 @@ export default class Inici extends React.Component {
                 {this.pintarLlista()}
               </View>
               
-              <Button buttonText = {'Decideix!!'} path = {() => Actions.result({llista: this.state.llista})}/>
+              <Button buttonText = {'Decideix!!'} path = {() => Actions.count3({llista: this.state.llista})}/>
 
             </View>  
         );
